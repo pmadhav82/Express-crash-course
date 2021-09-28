@@ -1,0 +1,50 @@
+{{>navbar}}
+
+
+
+<h1>
+
+
+    {{#if showHeading}}
+    {{heading}}
+    {{else}}
+    <h1>Could not show you the heading..</h1>
+    {{/if}}
+    </h1>
+
+<p>{{description}}</p>
+
+<div class="members">
+<ul>
+{{#each members}}
+<li>{{this.name}}, {{this.location}}</li>
+{{/each}}
+
+</ul>
+</div>
+
+
+
+<div class="comments">
+  {{#each comments}}
+
+<p>Name: {{this.name}}</p>
+
+<p>Comment: {{this.comment}}</p>
+{{/each}} 
+
+
+
+</div>
+
+
+<form id = "myform"action="/" method="POST">
+<input type="text" required name="name">Your name
+<br>
+<textarea name="comment" required id="" cols="30" rows="4"></textarea>
+<input  id = "submit" type="submit" value="Post">
+
+
+{{>footer}}
+
+
